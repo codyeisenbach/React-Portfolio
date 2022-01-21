@@ -7,6 +7,7 @@ import "./style.css";
 
 const Portfolio = (props) => {
   const { data, isLoading, error } = API();
+  console.log(JSON.stringify(data));
   if (isLoading) return console.log("...loading");
   if (error) return console.log("error");
   // const isDesktop = useMediaQuery("(min-width: 960px)");
