@@ -22,7 +22,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={Portfolio(choice)} />
           <Route path="/resume" element={<Resume />} />
-          <Route path="/portfolio" element={Portfolio(choice)} />
+          <Route path="/portfolio" element={<Resume />} />
         </Routes>
       </PortfolioContext.Provider>
     </HashRouter>
