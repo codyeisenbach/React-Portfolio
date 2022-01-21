@@ -21,8 +21,8 @@ function App() {
         <Navie />
         <Routes>
           <Route exact path="/" element={Portfolio(choice)} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="/portfolio" element={<Resume />} />
+          <Route path="/Resume" element={<Resume />} />
+          <Route path="/Portfolio" element={Portfolio(choice)} />
         </Routes>
       </PortfolioContext.Provider>
     </HashRouter>
