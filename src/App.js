@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Portfolio from "./pages/Portfolio";
 import Resume from "./pages/Resume";
 import Navie from "./components/Navbar";
@@ -16,7 +16,7 @@ function App() {
 
   // console.log(choiceState.choice);
   return (
-    <BrowserRouter>
+    <HashRouter>
       <PortfolioContext.Provider value={value}>
         <Navie />
         <Routes>
@@ -25,7 +25,7 @@ function App() {
           <Route path="/portfolio" element={Portfolio(choice)} />
         </Routes>
       </PortfolioContext.Provider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
