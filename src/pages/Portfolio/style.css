@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+}
+
+@media (min-width: 600px) {
+  .flex-grid {
+    margin-top: 150px;
+  }
+}
+
+.flex-grid {
+  width: 75%;
+  margin-top: 125px;
+  align-items: center;
+}
+
+.social-links {
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: -50px;
+  height: 110px;
+  margin-top: 140px;
+  display: flex;
+}
+
+.linkedin {
+  display: flex;
+  width: 100%;
+}
+
+.github {
+  display: flex;
+  width: 100%;
+}

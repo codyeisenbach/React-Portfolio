@@ -1,39 +1,32 @@
-import React, { Component } from 'react';
-import './App.css';
-import { Layout, Header, Navigation, Drawer, Content } from 'react-mdl';
-import Main from './components/main';
-import { Link } from 'react-router-dom';
+import React, { useState, useMemo } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Portfolio from "./pages/Portfolio";
+import Resume from "./pages/Resume";
+import Navie from "./components/Navbar";
+import PortfolioContext from "./utils/PortfolioContext";
+import "./App.css";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="demo-big-content">
-    <Layout>
-        <Header className="header-color" title={<Link style={{textDecoration: 'none', color: 'white'}} to="/">MyPortfolio</Link>} scroll>
-            <Navigation>
-                <Link to="/resume">Resume</Link>
-                <Link to="/aboutme">About Me</Link>
-                <Link to="/projects">Projects</Link>
-                <Link to="/contact">Contact</Link>
-            </Navigation>
-        </Header>
-        <Drawer title={<Link style={{textDecoration: 'none', color: 'black'}} to="/">MyPortfolio</Link>}>
-            <Navigation>
-              <Link to="/resume">Resume</Link>
-              <Link to="/aboutme">About Me</Link>
-              <Link to="/projects">Projects</Link>
-              <Link to="/contact">Contact</Link>
-            </Navigation>
-        </Drawer>
-        <Content>
-            <div className="page-content" />
-            <Main/>
-        </Content>
-    </Layout>
-</div>
+/* two functions needed, one passed down to <Navie> from this component that sets the state to what is clicked
+ and one that's inside of <Portfolio> that sets the query based on the state 
+ */
 
-    );
-  }
+function App() {
+  const [choice, setChoiceState] = useState("");
+  const value = useMemo(() => ({ choice, setChoiceState }), [choice]);
+
+  // console.log(choiceState.choice);
+  return (
+    <BrowserRouter>
+      <PortfolioContext.Provider value={value}>
+        <Navie />
+        <Routes>
+          <Route path="/" element={Portfolio(choice)} />
+          <Route path="/resume" element={<Resume />} />
+          <Route path="/portfolio" element={Portfolio(choice)} />
+        </Routes>
+      </PortfolioContext.Provider>
+    </BrowserRouter>
+  );
 }
 
 export default App;
