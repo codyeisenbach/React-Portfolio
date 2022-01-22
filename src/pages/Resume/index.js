@@ -1,5 +1,5 @@
 import React from "react";
-import resume from "../../assets/Resume.pdf";
+import resume from "../../assets/J Cody Eisenbach Full Stack Resume.pdf";
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
 import { Button } from "react-bootstrap";
 import useMediaQuery from "../../utils/useMediaQuery";
