@@ -64,7 +64,7 @@ function Navie() {
               >
                 React
               </NavDropdown.Item>
-              <NavDropdown.Item
+              {/* <NavDropdown.Item
                 className="nav-drop"
                 as={Link}
                 to="/"
@@ -72,7 +72,7 @@ function Navie() {
                 onClick={clickHandler}
               >
                 Next.js
-              </NavDropdown.Item>
+              </NavDropdown.Item> */}
               <NavDropdown.Item
                 className="nav-drop"
                 as={Link}
