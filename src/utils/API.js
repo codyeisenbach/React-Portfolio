@@ -76,7 +76,7 @@ export default function API() {
   const { data, isLoading, error } = useQuery("info", () => {
     return axios({
       headers: {
-        Authorization: `bearer ${process.env.REACT_APP_KEY}`,
+        Authorization: `bearer ${process.env.REACT_APP_TOKEN}`,
       },
       url: endpoint,
       method: "POST",
