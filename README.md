@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# This project was deployed with heroku
+# This project was deployed with Heroku
 
 link to deployed project
 
