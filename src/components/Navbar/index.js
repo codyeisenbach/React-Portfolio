@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import PortfolioContext from "../../utils/PortfolioContext.js";
@@ -8,20 +8,22 @@ import "./style.css";
 
 function Navie() {
   const { setChoiceState } = useContext(PortfolioContext);
-
   const clickHandler = (event) => {
+    setExpanded(false);
     setChoiceState(event.target.getAttribute("value"));
   };
+  const [expanded, setExpanded] = useState(false);
 
   return (
-    <Navbar
-      className="nav-style"
-      bg="dark"
-      variant="dark"
-      expand="lg"
-      fixed="top"
-    >
-      <Container>
+    <Container>
+      <Navbar
+        className="nav-style"
+        bg="dark"
+        variant="dark"
+        expand="lg"
+        fixed="top"
+        expanded={expanded}
+      >
         <Logo className="logo" />
         <Navbar.Brand
           className="nav-brand"
@@ -33,7 +35,11 @@ function Navie() {
           J Cody Eisenbach
         </Navbar.Brand>
 
-        <Navbar.Toggle aria-controls="basic-navbar-nav " />
+        <Navbar.Toggle
+          className="nav-toggle"
+          aria-controls="basic-navbar-nav "
+          onClick={() => setExpanded(expanded ? false : "expanded")}
+        />
 
         <Navbar.Collapse className="align-var" id="basic-navbar-nav">
           <Nav>
@@ -47,7 +53,12 @@ function Navie() {
               Home
             </Nav.Link>
 
-            <Nav.Link className="nav-link" as={Link} to="/Resume">
+            <Nav.Link
+              onClick={clickHandler}
+              className="nav-link"
+              as={Link}
+              to="/Resume"
+            >
               Resume
             </Nav.Link>
             <NavDropdown
@@ -95,8 +106,8 @@ function Navie() {
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
-      </Container>
-    </Navbar>
+      </Navbar>
+    </Container>
   );
 }
 
