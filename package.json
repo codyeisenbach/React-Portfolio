@@ -2,6 +2,9 @@
   "name": "reactpractice",
   "homepage": "http://codyeisenbach.github.io",
   "version": "0.1.0",
+  "engines": {
+    "node": "16.13.0"
+  },
   "type": "module",
   "private": true,
   "dependencies": {
@@ -22,7 +25,6 @@
     "react-scripts": "^5.0.1",
     "react-social-icons": "^5.7.0",
     "sass": "^1.47.0",
-    "type": "module",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
