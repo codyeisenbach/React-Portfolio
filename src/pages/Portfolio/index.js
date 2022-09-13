@@ -1,7 +1,6 @@
 import React from "react";
 import API from "../../utils/API.js";
 import RepoItem from "../../components/RepoItem/index.js";
-// import useMediaQuery from "../../utils/useMediaQuery";
 import { SocialIcon } from "react-social-icons";
 import "./style.css";
 
@@ -10,7 +9,6 @@ const Portfolio = (props) => {
   console.log(JSON.stringify(data));
   if (isLoading) return console.log("...loading");
   if (error) return console.log("error");
-  // const isDesktop = useMediaQuery("(min-width: 960px)");
 
   let selectedRepos = data?.user.pinnedItems.edges;
 
@@ -33,10 +31,6 @@ const Portfolio = (props) => {
     default:
       selectedRepos = data?.user.pinnedItems.edges;
   }
-
-  // console.log(getContextValue());
-
-  //const allRepos = data?.user.repositories.edges;//
 
   return (
     <div className="container">
